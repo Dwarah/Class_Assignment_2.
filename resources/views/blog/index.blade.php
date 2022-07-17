@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
             <div class="col-12 pt-2">
                 <div class="row">
@@ -8,10 +8,12 @@
                         <h1 class="display-one">Our Blog!</h1>
                         <p>Enjoy reading our posts. Click on a post to read!</p>
                     </div>
+                    @auth
                     <div class="col-4">
                         <p>Create new Post</p>
                         <a href="/blog/create/post"class="btn btn-primary btn-sm">Add Post</a>
                         </div>
+                    @endauth
                     </div>
                     @forelse($posts as $post)
                         <ul>
